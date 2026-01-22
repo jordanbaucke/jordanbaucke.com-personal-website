@@ -1,0 +1,84 @@
+name: Check Links
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    name: Validate External Links
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Install lychee
+        run: |
+          curl -L https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+          sudo mv lychee /usr/local/bin/
+          lychee --version
+      
+      - name: Extract links
+        run: python3 tests/extract_links.py
+      
+      - name: Check links
+        run: ./tests/check_links.sh
+        continue-on-error: true  # Don't fail the workflow, just report
+      
+      - name: Upload link extraction results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: outbound-links
+          path: tests/outbound_links.txt
+      
+      - name: Upload link check results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: link-check-results
+          path: tests/link_check_results.txt
+      
+      - name: Comment PR with results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            let comment = '## 🔗 Link Check Results\n\n';
+            
+            try {
+              const results = fs.readFileSync('tests/link_check_results.txt', 'utf8');
+              const outbound = fs.readFileSync('tests/outbound_links.txt', 'utf8');
+              
+              // Extract summary from results
+              const lines = results.split('\n');
+              const summary = lines.slice(0, 20).join('\n');
+              
+              comment += '### Summary\n';
+              comment += '```\n' + summary + '\n```\n\n';
+              comment += '<details><summary>Full Results</summary>\n\n';
+              comment += '```\n' + results + '\n```\n\n';
+              comment += '</details>\n\n';
+              comment += '<details><summary>Outbound Links List</summary>\n\n';
+              comment += '```\n' + outbound + '\n```\n\n';
+              comment += '</details>';
+            } catch (error) {
+              comment += '⚠️ Error reading results: ' + error.message;
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

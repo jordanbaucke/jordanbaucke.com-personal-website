@@ -1,0 +1,43 @@
+# Lychee configuration file
+# Documentation: https://github.com/lycheeverse/lychee
+
+# Base URL for the site
+base_url = "https://jordanbaucke.github.io/personal-website"
+
+# Only check external links (links outside the base domain)
+exclude_all_private = false
+exclude_private = false
+exclude_link_local = true  # Exclude local/internal links
+include_mail = false  # Exclude mailto: links
+
+# Timeout settings (in seconds)
+timeout = 20
+
+# Retry settings
+max_retries = 3
+retry_wait_time = 1
+
+# Concurrency settings (reduce to avoid panics with many links)
+max_concurrency = 5
+
+# User agent
+user_agent = "Mozilla/5.0 (compatible; lychee-link-checker/1.0; +https://github.com/lycheeverse/lychee)"
+
+# Accept invalid SSL certificates (useful for development, set to false in production)
+insecure = false
+
+# Verbose output (options: "error", "warn", "info", "debug", "trace")
+verbose = "info"
+
+# Include fragments (anchors) in URLs
+include_fragments = false
+
+# Accept HTTP status codes (200, 301, 302 are always accepted)
+accept = [
+  "200",
+  "301",
+  "302",
+  "303",
+  "307",
+  "308"
+]

@@ -1,0 +1,16 @@
+# Cursor Rules for Personal Website
+
+## Link Management
+When adding external links to HTML files:
+- Ensure they are properly formatted with `target="_blank" rel="noopener noreferrer"` for external links
+- After adding new external links, run `python3 tests/extract_links.py` to update the outbound links list
+- The outbound links list is maintained in `tests/outbound_links.txt` for debugging and validation
+
+## Testing
+- Before committing, run `./tests/check_links.sh` to validate all external links
+- The link validation tool uses lychee and can be integrated into CI/CD pipelines
+
+## Code Style
+- Use semantic HTML5
+- Keep CSS and JavaScript minimal and vanilla
+- Maintain the intentionally minimalistic design philosophy

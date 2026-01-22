@@ -13,3 +13,8 @@ yarn.lock
 *.swp
 *.swo
 *~
+
+# Test generated files (all generated outputs excluded from commits)
+tests/link_check_results.txt
+tests/lychee_input.txt
+tests/outbound_links.txt
