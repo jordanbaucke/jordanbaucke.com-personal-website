@@ -106,6 +106,13 @@ header h1 {
   margin-left: 0.25rem;
 }
 
+.lp-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
 .profile-picture {
   width: 120px;
   height: 120px;
