@@ -5,9 +5,9 @@ const navItems = [
   { href: 'podcasts.html', icon: 'fas fa-podcast', text: 'Podcasts' },
   { href: 'library.html', icon: 'fas fa-book', text: 'Library' },
   { href: 'appearances.html', icon: 'fas fa-video', text: 'Appearances' },
+  { href: 'investing.html', icon: 'fas fa-chart-line', text: 'Investing' },
   { href: 'https://www.linkedin.com/in/jordanbaucke', icon: 'fab fa-linkedin', text: 'LinkedIn' },
-  { href: 'https://github.com/jordanbaucke', icon: 'fab fa-github', text: 'GitHub' },
-  { type: 'popover', id: 'contact', icon: 'fas fa-envelope', text: 'Contact' }
+  { href: 'https://github.com/jordanbaucke', icon: 'fab fa-github', text: 'GitHub' }
 ];
 
 function loadNavigation() {
