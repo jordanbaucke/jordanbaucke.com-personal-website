@@ -106,6 +106,13 @@ header h1 {
   margin-left: 0.25rem;
 }
 
+.lp-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
 .profile-picture {
   width: 120px;
   height: 120px;
@@ -356,6 +363,88 @@ body.nav-open {
   margin-top: 2rem;
 }
 
+/* Stand-out: 21st Century Digital Boy Scout */
+.standout-boyscout {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.standout-boyscout-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.standout-boyscout-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.standout-boyscout-text {
+  flex: 1;
+  width: 100%;
+}
+
+.standout-boyscout-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.standout-boyscout-title a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.standout-boyscout-title a:hover {
+  text-decoration: underline;
+}
+
+.standout-boyscout-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .standout-boyscout {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .standout-boyscout-inner {
+    flex-direction: row;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .standout-boyscout-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .standout-boyscout-title {
+    font-size: 1.5rem;
+  }
+
+  .standout-boyscout-text p {
+    font-size: 1rem;
+  }
+}
+
 section {
   margin-top: 2.5rem;
 }
@@ -402,6 +491,82 @@ blockquote {
 
 .coming-soon-link i {
   opacity: 0.7;
+}
+
+/* Portfolio (investing page) */
+.portfolio-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.portfolio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.portfolio-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.portfolio-logo {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: #f5f5f5;
+  padding: 4px;
+}
+
+.portfolio-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.portfolio-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.portfolio-link:hover {
+  text-decoration: underline;
+}
+
+.portfolio-link .portfolio-logo {
+  display: block;
+}
+
+.portfolio-symbol {
+  font-weight: 600;
+  font-family: ui-monospace, monospace;
+}
+
+.portfolio-thesis {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.portfolio-logos-source {
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.portfolio-logos-source a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.portfolio-logos-source a:hover {
+  color: var(--text);
 }
 
 #disclaimers {
