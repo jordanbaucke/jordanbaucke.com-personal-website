@@ -27,6 +27,43 @@ body {
   line-height: 1.6;
 }
 
+.web1-marquee {
+  background: #f3f3f3;
+  color: var(--muted);
+  padding: 0.35rem 0;
+  font-size: 0.9rem;
+  font-family: "Times New Roman", Times, serif;
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.web1-marquee em {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.lp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 0.25rem;
+  background: #f1f1f1;
+  text-decoration: none;
+}
+
+.lp-link:hover {
+  background: #e4e4e4;
+}
+
+.lp-link .lp-icon {
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+}
+
 main {
   max-width: var(--max-width);
   padding: 1.5rem 1rem;
@@ -104,13 +141,6 @@ header h1 {
   height: auto;
   vertical-align: middle;
   margin-left: 0.25rem;
-}
-
-.lp-icon {
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  margin-right: 0.35rem;
 }
 
 .profile-picture {
@@ -475,6 +505,37 @@ blockquote {
   font-style: italic;
 }
 
+.philosophy-quote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-left: 3px solid var(--text);
+  background: #f9f9f9;
+  color: var(--text);
+  font-style: normal;
+}
+
+.philosophy-quote p {
+  margin: 0 0 1rem 0;
+  line-height: 1.8;
+}
+
+.philosophy-quote cite {
+  display: block;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+.philosophy-quote cite a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.philosophy-quote cite a:hover {
+  text-decoration: underline;
+}
+
 .coming-soon-link {
   color: var(--muted);
   text-decoration: none;
@@ -491,82 +552,6 @@ blockquote {
 
 .coming-soon-link i {
   opacity: 0.7;
-}
-
-/* Portfolio (investing page) */
-.portfolio-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.portfolio-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.portfolio-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.portfolio-logo {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  border-radius: 6px;
-  object-fit: contain;
-  background: #f5f5f5;
-  padding: 4px;
-}
-
-.portfolio-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.portfolio-link {
-  color: var(--text);
-  text-decoration: none;
-}
-
-.portfolio-link:hover {
-  text-decoration: underline;
-}
-
-.portfolio-link .portfolio-logo {
-  display: block;
-}
-
-.portfolio-symbol {
-  font-weight: 600;
-  font-family: ui-monospace, monospace;
-}
-
-.portfolio-thesis {
-  margin: 0.5rem 0 0 0;
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-style: italic;
-}
-
-.portfolio-logos-source {
-  margin: 0 0 1rem 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.portfolio-logos-source a {
-  color: var(--muted);
-  text-decoration: underline;
-}
-
-.portfolio-logos-source a:hover {
-  color: var(--text);
 }
 
 #disclaimers {
@@ -1117,4 +1102,36 @@ footer {
   .timeline-content p {
     font-size: 1rem;
   }
+}
+
+/* ==========================================================================
+   Philosophy Page Images
+   ========================================================================== */
+
+.philosophy-image {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.philosophy-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-image figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.philosophy-image figcaption a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.philosophy-image figcaption a:hover {
+  text-decoration: underline;
 }
