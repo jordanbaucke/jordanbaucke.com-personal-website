@@ -536,6 +536,73 @@ blockquote {
   text-decoration: underline;
 }
 
+/* ==========================================================================
+   Portfolio (investing page) – block style to match philosophy quotes
+   ========================================================================== */
+
+.portfolio-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-card {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-left: 3px solid var(--text);
+  background: #f9f9f9;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.portfolio-card:first-of-type {
+  margin-top: 1.5rem;
+}
+
+.portfolio-card .portfolio-logo {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  background: #fff;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.portfolio-card .portfolio-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.portfolio-card .portfolio-content > a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.portfolio-card .portfolio-content > a:hover {
+  text-decoration: underline;
+}
+
+.portfolio-card .portfolio-symbol {
+  font-weight: 700;
+  font-family: ui-monospace, monospace;
+}
+
+.portfolio-card .portfolio-thesis {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.portfolio-logos-source {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
 .coming-soon-link {
   color: var(--muted);
   text-decoration: none;
