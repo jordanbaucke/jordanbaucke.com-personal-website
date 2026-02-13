@@ -47,22 +47,9 @@
         <div class="timeline-line"></div>
         
         <div class="timeline-items">
-          <!-- Timeline entries will be added here -->
-          <!-- Example entry structure:
-          <div class="timeline-item" data-year="2026" data-month="January">
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-              <div class="timeline-month">January</div>
-            </div>
-            <div class="timeline-content">
-              <h3>Event Title</h3>
-              <p>Description or notes about the appearance.</p>
-              <div class="timeline-video">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-          -->
+          <!-- Timeline entries are injected by appearances.js from timelineData.
+               Each entry can include premiere: "YYYY-MM-DDTHH:mm:ss.sssZ" (ISO 8601).
+               The premiere is stored in data-premiere and a live counter shows time since/until premiere (ms). -->
         </div>
       </div>
     </section>
