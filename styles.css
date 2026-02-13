@@ -543,6 +543,64 @@ blockquote {
   text-decoration: underline;
 }
 
+/* Quotes carousel – one quote visible, Random / Next controls */
+.quotes-carousel {
+  margin-top: 1rem;
+}
+
+.quotes-carousel-track {
+  position: relative;
+  min-height: 8rem;
+}
+
+.quotes-carousel .philosophy-quote {
+  display: none;
+  margin: 0;
+}
+
+.quotes-carousel .philosophy-quote.active {
+  display: block;
+  animation: quotes-fade-in 0.3s ease-out;
+}
+
+@keyframes quotes-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.quotes-carousel-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.quotes-carousel-btn {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--muted);
+  background: #fff;
+  color: var(--text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.quotes-carousel-btn:hover {
+  background: #f5f5f5;
+  border-color: var(--text);
+}
+
+.quotes-carousel-btn:focus {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
 /* ==========================================================================
    Portfolio (investing page) – block style to match philosophy quotes
    ========================================================================== */
